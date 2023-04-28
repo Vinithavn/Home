@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Object Oriented Programming (1)</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Inheritance and Slicing</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -666,24 +666,27 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="7acc9a31-14b4-4c71-8631-c9d3a00e59ae" class="page serif"><header><h1 class="page-title">Object Oriented Programming (1)</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="af6f6cef-75c2-4f40-8c5f-e4b7c7dcc028"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Object Oriented Programming or OOPs is a way of writing the program using classes and objects. In large and complex programs, we can make use of the OOPs concepts and modularize the code. This will increase the readability of the code and will help in easy debugging. </div></figure><h2 id="7edb9f44-aa6a-4dd1-9b3f-c0525d086198" class="">Classes</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ea6f377b-5a3e-4306-850e-c3362f30e417"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Class can be considered as a custom data type which is defined by the user. A class can have various attributes and methods specific to it. Consider the below example of a class.</div></figure><pre id="7cba9f00-c9e7-4ec9-bd72-c2b51d1bf6e2" class="code"><code>Class Vehicle:
-	no_of_wheels = 4 
-	def stop(self):
-		print(&quot;Stopping the vehicle&quot;)</code></pre><p id="1c9f7695-2b20-4e3c-aca7-f11d7960a98f" class="">Here Vehicle is the name of our class. no_of_wheels is an attribute of the class, and stop() function is a method specific to this class</p><h2 id="99aa5b96-4e2b-4e3d-af0d-cd813159edad" class="">Objects</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="caa86497-386f-450b-b5c2-8825f2465423"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Objects are instances of class. Classes acts as a blueprint for creating the objects. We can create one or more objects of the same class type, just like we create multiple integer variables, or floating point variables. When we define an object of a particular class, it will have access to all the attributes and methods of the class. In addition to that, we can also modify the attributes for each objects. Consider the example below</div></figure><pre id="292c772a-02a7-42a3-8431-f37463a9a759" class="code"><code>car = Vehicle()
-print(car.no_of_wheels)
-print(car.stop())</code></pre><p id="07a6d3ef-a544-4b6f-a22f-bee9dc2668d8" class="">Here we are creating an object for the class Car. We can access the class attributes and methods for this object  using the dot operator. In the above example car.no_of_wheels will output the value 4 and car.stop() will print “Stopping the vehicle”</p><h2 id="86900f1f-c2e9-42e6-8ef4-2ef819ff5bb6" class="">Constructors in a class</h2><p id="d6e8d9f3-10cd-425e-a387-ee4c3906fa6f" class="">Constructors in a class is used for initializing the variables in a class. This is defined using an init function. Init function is automatically called whenever we create a new object. Consider the below example. Here whenever an object of class Vehicle is created, the number of wheels attribute is initialized and is set to 4. </p><pre id="71090784-aaef-4b0b-bc1d-e4f14033131b" class="code"><code>Class Vehicle:
-	def __init__(self)
-		self.no_of_wheels = 4 
-	def stop(self):
-		print(&quot;Stopping the vehicle&quot;)</code></pre><h2 id="633e7a73-7fba-4094-b7f8-131745fc3c82" class="">Self-parameter</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8a01a01e-32f0-4faf-bebe-035bf63f1fc2"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Almost all methods in the class have an extra parameter called self. It references the current object of the class. </div></figure><h2 id="174667fb-ec51-4533-8018-a5cea95df698" class="">Why OOPs</h2><ul id="f3a60723-eebb-4e19-a475-ed6cc0eeceb3" class="bulleted-list"><li style="list-style-type:disc">Procedural programming - Without OOPs</li></ul><ul id="c2dbc290-78c5-4939-a877-b12cfd359d3b" class="bulleted-list"><li style="list-style-type:disc">Python is an OOP Language </li></ul><ul id="44c9a3b2-c312-4fd3-b055-0da1e992c97e" class="bulleted-list"><li style="list-style-type:disc">We can take chunks of code and modularize it </li></ul><ul id="b3340b14-bd6d-4c4e-b02f-ca06505c98c8" class="bulleted-list"><li style="list-style-type:disc">Each of the modules can be reused whenever needed </li></ul><ul id="a740cb0c-f7d3-4a42-a8a3-71f9d4cfa4c0" class="bulleted-list"><li style="list-style-type:disc">We cant use procedural programming for a large or complex program </li></ul><ul id="2c5df09f-50ab-47c2-a423-344ea2c447be" class="bulleted-list"><li style="list-style-type:disc">In those cases, we can make use of OOPs </li></ul><ul id="d8c06532-c9d1-4b0e-980d-db2198e25d1d" class="bulleted-list"><li style="list-style-type:disc">How to use OOP <ul id="c989eaff-aa34-4e42-98e6-4a6b68bedcce" class="bulleted-list"><li style="list-style-type:circle">By creating classes and objects</li></ul><ul id="85707b8a-ba8f-4a4b-ae0c-cb395d45c98f" class="bulleted-list"><li style="list-style-type:circle">A class is a blueprint that has some attributes and methods</li></ul><ul id="e66a1852-b360-417b-9b1c-af01849cad47" class="bulleted-list"><li style="list-style-type:circle">Objects are instances of the class that are used in the program </li></ul><ul id="b11dcb93-f982-4ff6-b23c-46973d7e7b69" class="bulleted-list"><li style="list-style-type:circle">Therefore an object will have attributes(variables) and methods(functions) </li></ul></li></ul><h2 id="ec368aff-8aa3-48bc-8bf1-f450cfbb7bce" class="">Difference between class and module </h2><ul id="99b3a65b-e771-4ece-928a-48104b54ba9b" class="bulleted-list"><li style="list-style-type:disc">A module can be considered a python script and it can have zero or more classes </li></ul><ul id="0b33eaf4-833a-4d9e-8fcd-288d824b88fb" class="bulleted-list"><li style="list-style-type:disc">To import a variable or function from a module, we can just use <ul id="ead8c9ea-018b-4e49-ba80-b6ff36a6390c" class="bulleted-list"><li style="list-style-type:circle">Consider a module called another_module.py in a project</li></ul><pre id="62b95f6b-1903-4dc1-bf51-740c2888aa40" class="code"><code>another_variable = 12</code></pre><ul id="777cc481-f096-4987-bba4-8ebf04ab6e11" class="bulleted-list"><li style="list-style-type:circle">Now from <a href="http://main.py">main.py</a> inside the same project, we can access the module as:</li></ul><pre id="1f3608b7-8ab9-4aed-aa22-b5952542ae7b" class="code"><code>import another_module 
-print(another_module.another_variable)</code></pre><ul id="daf27d27-d323-4275-b738-2be5773b6039" class="bulleted-list"><li style="list-style-type:circle">If another_module.py is like this<pre id="18d3979e-d4cc-4e6b-ac97-023f9d5f17ed" class="code"><code>another_variable = 12
-class Myclass:
-	def __init__():
-		class_variable = 13
-</code></pre><p id="7e86f1d8-4695-49b0-9c53-c2c252f5970b" class="">Then from <a href="http://main.py">main.py</a> to access these two variables, the process is different</p><pre id="dd59ede5-9e8d-4679-b4f8-2a29659c2a81" class="code"><code>import another_module 
-print(another_module.another_variable)
+</style></head><body><article id="87d39e62-1298-423c-ad2b-776866581665" class="page serif"><header><h1 class="page-title">Inheritance and Slicing</h1></header><div class="page-body"><h1 id="a345c2a2-d63e-423b-a3c6-6ac5c11cd206" class="">Inheritance</h1><ul id="6f2c175f-08aa-4f89-9ae9-70d996ab987d" class="bulleted-list"><li style="list-style-type:disc">Inheriting attributes and methods from another class is called inheritance </li></ul><pre id="ba143cdc-58dd-48cd-99e1-d454bd75ff7b" class="code"><code>class Fish:
+	def __init__(self):</code></pre><ul id="128e783d-3ea3-492b-9d71-59856e0827f5" class="bulleted-list"><li style="list-style-type:disc">For inheriting from another class, include the parent class while defining the class. In order to get all the attributes and methods from the parent class, include the super.__init__. </li></ul><pre id="9d1e8713-52eb-4862-afa9-6c82d5724aca" class="code"><code>class Fish(Animal):
+	def __init__(self):
+		super().__init__()</code></pre><ul id="995afa23-0f82-484d-849c-30620465d1a7" class="bulleted-list"><li style="list-style-type:disc">How to inherit a particular method from a superclass and add extra commands.?</li></ul><pre id="bbb83654-accb-44aa-8edd-a3303204f2e1" class="code"><code>class Animal:
+	def __init__(self):
+		num_eyes = 2
+	def breate(self):
+		print(&quot;breathing&quot;)
 
-from another_module import Myclass 
-class_obj = Myclass()
-print(class_obj.class_variable)</code></pre><ul id="93708de9-d266-4e95-954a-d4b8c6804a14" class="bulleted-list"><li style="list-style-type:square">Here another_module.py is a module and Myclass is the class that is defined inside that module </li></ul></li></ul></li></ul><p id="6f21c82b-8f45-4339-a006-c2276e6dd762" class=""><div class="indented"><p id="cdc036e4-9c62-4f34-99db-906153ff8a58" class="">
-</p></div></p></div></article></body></html>
+class Fish(Animal):
+	def __init__(self):
+		super().__init__()
+	def breathe(self): #inheriting a method from superclass
+		super().breathe()
+		print(&quot;Breathing underwater&quot;)
+
+
+nemo = Fish()
+nemo.breathe()
+
+Output:
+breathing --&gt;from the parent class
+Breathing underwater --&gt;fom Fish class</code></pre><p id="bea6d6d4-9e60-4085-b183-6042b0ec567f" class="">
+</p></div></article></body></html>

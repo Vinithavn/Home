@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Inheritance and Slicing (1)</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Functions</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -666,27 +666,41 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="87d39e62-1298-423c-ad2b-776866581665" class="page serif"><header><h1 class="page-title">Inheritance and Slicing (1)</h1></header><div class="page-body"><h1 id="a345c2a2-d63e-423b-a3c6-6ac5c11cd206" class="">Inheritance</h1><ul id="6f2c175f-08aa-4f89-9ae9-70d996ab987d" class="bulleted-list"><li style="list-style-type:disc">Inheriting attributes and methods from another class is called inheritance </li></ul><pre id="ba143cdc-58dd-48cd-99e1-d454bd75ff7b" class="code"><code>class Fish:
-	def __init__(self):</code></pre><ul id="128e783d-3ea3-492b-9d71-59856e0827f5" class="bulleted-list"><li style="list-style-type:disc">For inheriting from another class, include the parent class while defining the class. In order to get all the attributes and methods from the parent class, include the super.__init__. </li></ul><pre id="9d1e8713-52eb-4862-afa9-6c82d5724aca" class="code"><code>class Fish(Animal):
-	def __init__(self):
-		super().__init__()</code></pre><ul id="995afa23-0f82-484d-849c-30620465d1a7" class="bulleted-list"><li style="list-style-type:disc">How to inherit a particular method from a superclass and add extra commands.?</li></ul><pre id="bbb83654-accb-44aa-8edd-a3303204f2e1" class="code"><code>class Animal:
-	def __init__(self):
-		num_eyes = 2
-	def breate(self):
-		print(&quot;breathing&quot;)
+</style></head><body><article id="2070e68b-1269-474d-8db4-a67103f60ce4" class="page serif"><header><h1 class="page-title">Functions</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="969f1f38-f7da-444d-9051-28d85af5c56c"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Functions are used to run repetitive tasks while running a program.  Imagine a use case where you have to find the cube of a number several number of times. Instead of writing the code again and again, you can create a function that will calculate and return the cube of any number.</div></figure><p id="118c9f2b-d265-442c-98e4-0766d23fe30a" class="">Example of a function</p><pre id="749643d5-77ba-4234-aefe-d8bdb7a67d05" class="code"><code>def cube_of_a_number(number):
+	cube = number**3
+	retun cube</code></pre><h2 id="ef2e1ae0-22cd-4fe0-b52c-54cc1557f200" class="">Important concepts in Functions</h2><ul id="df06017b-6ea2-47c8-9fc3-771a12e21015" class="bulleted-list"><li style="list-style-type:disc">Arguments and parameters<ul id="9715ee8b-3559-403e-ac37-1e4f11a9322c" class="bulleted-list"><li style="list-style-type:circle">def function_name(a=123)<ul id="4a095a9f-0082-4990-8774-a878f419269b" class="bulleted-list"><li style="list-style-type:square">Here, “a” is called parameter.</li></ul><ul id="2988779d-5311-4ab2-af1a-0978321c36ef" class="bulleted-list"><li style="list-style-type:square">123 is called an argument.</li></ul></li></ul></li></ul><ul id="a1a16740-95fd-4db6-a0ac-cc646df6a55d" class="bulleted-list"><li style="list-style-type:disc">Positional vs keyword arguments<pre id="e7f12a84-d4f0-477e-b6ae-b698b9308de7" class="code"><code>def greet_with(name,location):
+	print(f&quot;Hello {name}&quot;)
+	print(f&quot;What&#x27;s it like it in {location}&quot;)
+greet_with(&quot;Jack&quot;, &quot;Nowhere&quot;)</code></pre><ul id="e0e84bcd-1477-42e2-afda-2a60558aee27" class="bulleted-list"><li style="list-style-type:circle">Positional arguments—&gt; The arguments are passed inside the function in the order of their position of parameters. In python, arguments are passed in order by default.</li></ul><ul id="e8f7227f-1fda-4039-a018-8d3629c85687" class="bulleted-list"><li style="list-style-type:circle">Keyword arguments—&gt; We can specify this by adding the parameter name along with the arguments while passing to the function. For example:<ul id="70c850b1-8c47-4a0c-aa2f-d850a3d82c19" class="bulleted-list"><li style="list-style-type:square">greet_with(place=”Nowhere”,name=”Jack”)</li></ul></li></ul></li></ul><h1 id="2174d48d-b992-420f-8dc3-308cc033baee" class="">Assignments</h1><ul id="b6bccd08-36cc-4d67-817c-0c3f139298bf" class="bulleted-list"><li style="list-style-type:disc">Ceasar cipher:<p id="fa1d7757-758c-4605-a512-865d344312ee" class="">Given a word, we need to write a program to decode the word using Ceasar Cipher method. Here the decoding is done by shifting each character in the word by “n” position. For example, if n = 2, the character “a” will be decoded as “a”+  2 which will be “c”.</p></li></ul><pre id="56a0d8c8-a518-47ff-8a70-848131bfb845" class="code"><code>alphabet = [
+    &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27;, &#x27;e&#x27;, &#x27;f&#x27;, &#x27;g&#x27;, &#x27;h&#x27;, &#x27;i&#x27;, &#x27;j&#x27;, &#x27;k&#x27;, &#x27;l&#x27;, &#x27;m&#x27;, &#x27;n&#x27;, &#x27;o&#x27;,
+    &#x27;p&#x27;, &#x27;q&#x27;, &#x27;r&#x27;, &#x27;s&#x27;, &#x27;t&#x27;, &#x27;u&#x27;, &#x27;v&#x27;, &#x27;w&#x27;, &#x27;x&#x27;, &#x27;y&#x27;, &#x27;z&#x27;
+]
 
-class Fish(Animal):
-	def __init__(self):
-		super().__init__()
-	def breathe(self): #inheriting a method from superclass
-		super().breathe()
-		print(&quot;Breathing underwater&quot;)
-
-
-nemo = Fish()
-nemo.breathe()
-
-Output:
-breathing --&gt;from the parent class
-Breathing underwater --&gt;fom Fish class</code></pre><p id="bea6d6d4-9e60-4085-b183-6042b0ec567f" class="">
+def ceasar(actual_index, actual_shift, direction):
+    if direction == &quot;encode&quot;:
+        shifted_index = actual_index + actual_shift
+        if shifted_index &gt; 25:
+            shifted_index -= 26
+    elif direction == &quot;decode&quot;:
+        shifted_index = actual_index - actual_shift
+    return alphabet[shifted_index]
+  
+end_of_pgm = False
+while not end_of_pgm:
+  direction = input(&quot;Type &#x27;encode&#x27; to encrypt, type &#x27;decode&#x27; to decrypt:\n&quot;)
+  text = input(&quot;Type your message:\n&quot;).lower()
+  shift = int(input(&quot;Type the shift number:\n&quot;))
+  
+  decoded_text = &quot;&quot;
+  for letter in text:
+    if letter in alphabet:
+        actual_index = [i for i, e in enumerate(alphabet) if e == letter][0]
+        actual_shift = shift % 26
+        decoded_text += ceasar(actual_index, actual_shift, direction)
+    else:
+      decoded_text+=letter
+  print(decoded_text) 
+  continued = input(&quot;Do you want to go again. Type &#x27;yes&#x27; or &#x27;no&#x27; \n&quot;).lower()
+  if continued == &quot;no&quot;:
+    end_of_pgm = True</code></pre><p id="6c09294a-41ce-4377-9ccf-fdfd48e19bb3" class="">
 </p></div></article></body></html>
