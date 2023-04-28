@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Inheritance and Slicing </title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Scope (1)</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -666,27 +666,59 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="5c1bd56e-7003-4537-a7e8-f9b70cfcf7e1" class="page serif"><header><h1 class="page-title">Inheritance and Slicing </h1></header><div class="page-body"><h1 id="bbbf6316-7172-4c7a-8315-7c967c5167a4" class="">Inheritance</h1><ul id="0a02690e-c71f-46de-90a5-67ac4f832a5c" class="bulleted-list"><li style="list-style-type:disc">Inheriting attributes and methods from another class is called inheritance </li></ul><pre id="6eb28445-9a1f-4aad-af80-9973566a33cd" class="code"><code>class Fish:
-	def __init__(self):</code></pre><ul id="edfb34c4-6740-40f5-ad8a-86cad3633f8f" class="bulleted-list"><li style="list-style-type:disc">For inheriting from another class, include the parent class while defining the class. In order to get all the attributes and methods from the parent class, include the super.__init__. </li></ul><pre id="4a21134e-19b6-4d42-8307-a06fb2610d8b" class="code"><code>class Fish(Animal):
-	def __init__(self):
-		super().__init__()</code></pre><ul id="2366af95-d2de-4bc8-9469-3735fed5ef8f" class="bulleted-list"><li style="list-style-type:disc">How to inherit a particular method from a superclass and add extra commands.?</li></ul><pre id="fc6762a5-8598-4032-a49a-7f4e1157c9c4" class="code"><code>class Animal:
-	def __init__(self):
-		num_eyes = 2
-	def breate(self):
-		print(&quot;breathing&quot;)
+</style></head><body><article id="adac9a26-a050-49f2-ae72-f2e898c489e9" class="page serif"><header><h1 class="page-title">Scope (1)</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8b547049-433b-4a4e-9096-47ab4ab160af"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Scope of a variable is used to check the accessability of that variable in a program. Is indicates, from where in a particular program the variable can be accessed.</div></figure><ul id="8b097849-55dc-4367-9aa4-61f63047e1c5" class="bulleted-list"><li style="list-style-type:disc">Example<pre id="fedd1dcd-aae8-4360-b185-ebdd3a438cc8" class="code"><code>enemies = 1
+def increase_enemies():
+	enemies = 2
+	print(f&quot;Enemies inside the function is {enemies}&quot;)
 
-class Fish(Animal):
-	def __init__(self):
-		super().__init__()
-	def breathe(self): #inheriting a method from superclass
-		super().breathe()
-		print(&quot;Breathing underwater&quot;)
+increase_enemies()
+print(f&quot;Enemies outside the function is {enemies}&quot;)
 
+Output
+------
+2 #Because this is printing the variable inside the function. And inside the function,
+	 #variable is updated, so its value becomes 2
+1 #Because the value of enemies outside the function is 1</code></pre><h2 id="e910ce9d-6b0e-4bf0-b6f7-69d88990f75b" class="">Local variable and Global variable</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="3bf388b0-3409-498a-831d-956ed605694a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Variables in a program can be divided into two based on their scopes - Local variable and Global variable</div></figure><ul id="56f004be-1c7d-406f-86b9-219ccd33a994" class="bulleted-list"><li style="list-style-type:circle"><strong>Local variable</strong> -<ul id="23621017-7dcf-4fa5-bf42-4063eabb2764" class="bulleted-list"><li style="list-style-type:square">a variable that is defined inside the function, that is local to that function</li></ul><ul id="c251b7f1-5d02-4b67-ae67-e42296e7758e" class="bulleted-list"><li style="list-style-type:square">We cannot access a local variable from outside the function, because the scope of that variable is within that function alone</li></ul><ul id="eb58c93f-8441-4166-b88d-4e74cf7f44d8" class="bulleted-list"><li style="list-style-type:square">If we need to access the variable outside the function, we need a global variable</li></ul></li></ul><ul id="4ece8b6a-d227-43dc-b38b-f4541e252915" class="bulleted-list"><li style="list-style-type:circle"><strong>Global variable</strong><ul id="722ecc82-dd14-4445-9670-44017aaa1c76" class="bulleted-list"><li style="list-style-type:square">A global variable can be accessed from anywhere within the program, within and outside a function </li></ul></li></ul><ul id="79561e9c-3361-4e87-8705-dce96f30181b" class="bulleted-list"><li style="list-style-type:circle">The concept of local and global is applicable to variables, functions, objects, etc. </li></ul></li></ul><h2 id="9276dbd9-d1ce-4124-ae37-dcc20f2d55e6" class="">Block scope</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="8e7e1e04-1a78-4275-ac87-bece8b7c8d9b"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Block means the part of code which is contained between loops or if statements. Block scope of a variable indicates the scope of variable within the block. </div></figure><ul id="519f1b58-eee8-4855-bc7c-0810aa538224" class="bulleted-list"><li style="list-style-type:disc">Python does not have a <strong>block scope.</strong><pre id="2ba01737-0d12-4252-84b3-6b36ddc673d2" class="code"><code>if a&gt;3:
+	small_number = 3
+else:
+	small_number = a
+print(small_number) 
 
-nemo = Fish()
-nemo.breathe()
+&#x27;&#x27;&#x27;
+In this case, even though the variable small_number is defined inside if, and is 
+intended, the variable is not local and is available from anywhere within the program
+&#x27;&#x27;&#x27;</code></pre></li></ul><ul id="d73c7d97-0647-4aec-aa99-27a59678e9d2" class="bulleted-list"><li style="list-style-type:disc">Modify a global variable locally<ul id="f6371aab-70bd-4b75-a2e1-a88848b4d9ad" class="bulleted-list"><li style="list-style-type:circle">We cannot directly modify or use a global variable inside a function<figure id="1530a6f3-d41c-4539-b87c-fa427609ea3a" class="image"><a href="Untitled.png"><img style="width:636px" src="Untitled.png"/></a></figure></li></ul><ul id="7d0b1707-2075-44f5-bff9-2064fd73f613" class="bulleted-list"><li style="list-style-type:circle">This throws an error. Even though we have defined the variable outside the function, if we need to use it or modify it locally, we need to explicitly give that variable or mention the already defined one as a global variable. Line number 3<figure id="81c07687-13f4-4e3b-98b4-6dde53ad2811" class="image"><a href="Untitled%201.png"><img style="width:443px" src="Untitled%201.png"/></a></figure></li></ul></li></ul><ul id="7401dfeb-96b7-4f7c-aa31-394d99009cb4" class="bulleted-list"><li style="list-style-type:disc">Why can&#x27;t we modify a global variable directly?<ul id="e763a7b9-7aad-4550-8cc3-e5b88c294eea" class="bulleted-list"><li style="list-style-type:circle">This is used to prevent unnecessary bugs and failures caused if we could easily change any global variable</li></ul><ul id="b8de9272-7366-47b7-ae12-31e706276908" class="bulleted-list"><li style="list-style-type:circle"><strong>We can use it directly, but we can&#x27;t modify it </strong></li></ul></li></ul><ul id="a4844332-89f2-4fd1-94b8-0ccfd5494cbb" class="bulleted-list"><li style="list-style-type:disc">Another way to modify the global variable is by making use of a return statement. </li></ul><ul id="11ff114e-72a9-431c-9a69-14c8672fbe09" class="bulleted-list"><li style="list-style-type:disc">Global variables are widely used when we need to define constants, which we never change in the programming<ul id="e159fd77-135e-46a1-a1e0-a739a8e163c9" class="bulleted-list"><li style="list-style-type:circle">For example, if we need to define max_len or batch_size, we can define it as global and can use it whenever we need. But we cannot modify that global variable directly. We can change its value by assignment, inside any function. </li></ul><ul id="f026bba1-2108-467e-8535-f13f87791b3d" class="bulleted-list"><li style="list-style-type:circle">A good practice to define constants is to use upper case<ul id="3dc97ab7-3160-4081-95cd-7e009700c6de" class="bulleted-list"><li style="list-style-type:square">BATCH_SIZE = 8</li></ul><ul id="4607cc14-39f0-4914-a6c6-6967c39aafed" class="bulleted-list"><li style="list-style-type:square">MAX_LEN = 128 </li></ul></li></ul></li></ul><h1 id="762f1d05-2490-4b70-9928-81cd39a2e3f9" class="">Assignment</h1><ul id="4420b299-8952-4e9a-ac68-a8ce1761b316" class="bulleted-list"><li style="list-style-type:disc">The number-guessing game<p id="859941fd-59f5-40df-9418-9547d3f57566" class="">Guess the random number selected by the computer correctly within the given number of chances</p><pre id="646d6bd3-c747-453f-a7b5-cd097eb046c6" class="code"><code>import random
 
-Output:
-breathing --&gt;from the parent class
-Breathing underwater --&gt;fom Fish class</code></pre><p id="5374a6c3-f869-4fd8-876d-a512caf785de" class="">
+EASY_LEVEL_TURNS = 10
+HARD_LEVEL_TURNS = 5
+
+def set_difficulty():
+  difficulty_level = input(&quot;Choose a difficulty level. Easy or Hard &quot;).lower()
+  if difficulty_level == &quot;easy&quot;:
+    number_of_attempts = EASY_LEVEL_TURNS
+  else:
+    number_of_attempts =  HARD_LEVEL_TURNS
+  return number_of_attempts
+  
+def compare(user_input,answer):
+  if user_input&lt;answer:
+    print(&quot;Too low&quot;)
+    return False
+  elif user_input&gt;answer:
+    print(&quot;Too high&quot;)
+    return False
+  else:
+    print(&quot;You win!&quot;) 
+    return True
+    
+answer = random.randint(1,101) 
+print(answer) 
+number_of_attempts = set_difficulty() 
+end = False
+while number_of_attempts&gt;0 and end == False:
+  user_guess = int(input(&quot;Make a guess: &quot;)) 
+  end = compare(user_guess,answer)
+  number_of_attempts -= 1
+  if number_of_attempts==0 and end == False:
+    print(&quot;You lose!&quot;)</code></pre></li></ul><p id="23e710bc-fce8-4d1a-a13f-68da300818b5" class="">
 </p></div></article></body></html>

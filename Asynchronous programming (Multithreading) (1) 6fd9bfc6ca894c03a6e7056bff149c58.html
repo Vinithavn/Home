@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Dictionary</title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Asynchronous programming (Multithreading) (1)</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -666,50 +666,5 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="a00340cc-d15f-4047-8ff8-093b84cf2c9a" class="page serif"><header><h1 class="page-title">Dictionary</h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1a6c339f-2e4b-4208-a330-7e4fe81da889"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Dictionary is a datatype where we can store data as key-value pairs. We can consider dictionary as similar to a hash map. Keys in a dictionary can be of any type, but it should be unique. Each key can be mapped to a value. An example of a dictionary is:<pre id="76643e53-8479-4aa3-b233-c3d2f65f7965" class="code"><code>d = {&quot;a&quot;:1,&quot;b&quot;:2,&quot;c&quot;:3}</code></pre><p id="e286756b-aaff-4cb9-81bd-7fbd0b3f01e6" class="">Here a, b, c are the keys and 1, 2, 3 are the values of the dictionary d</p></div></figure><ul id="5788ccc8-cfde-4611-bdca-dc33013209a3" class="bulleted-list"><li style="list-style-type:disc">Best practices<ul id="ded803d3-6ed1-47d5-9595-52bb66ddb39e" class="bulleted-list"><li style="list-style-type:circle">Type each key in the next line to make it more readable</li></ul><pre id="61773d74-35aa-437b-a164-996cfb953d87" class="code"><code>d = {1:[1, 2, 3],
-		 2: [2, 3, 4],
-		 3:[3, 4, 5]
-		}</code></pre></li></ul><ul id="99a9a613-7b87-4125-aeef-ab73919aecb8" class="bulleted-list"><li style="list-style-type:disc">Wipe an entire dictionary <ul id="23849175-4354-4f36-8584-64cabffdf3cf" class="bulleted-list"><li style="list-style-type:circle">d = {1:”hi”}</li></ul><ul id="b3a87812-484c-4082-9323-9fda8e838967" class="bulleted-list"><li style="list-style-type:circle">d = {}</li></ul><ul id="1628cbda-716d-4d67-ae87-caa498f191bb" class="bulleted-list"><li style="list-style-type:circle">This will clear the dictionary</li></ul></li></ul><ul id="a1377ac0-19f4-4a78-8b96-4d211d7fe26d" class="bulleted-list"><li style="list-style-type:disc">To iterate over the dictionary:<ul id="dea7c087-6c53-460a-82c3-e41284cbd625" class="bulleted-list"><li style="list-style-type:circle">for key in dict:<ul id="7df00f76-fa6c-4c26-9870-5e801348a271" class="bulleted-list"><li style="list-style-type:square">print(key)</li></ul></li></ul><ul id="af56e07e-ee4f-4922-9bff-54ddfeebbca4" class="bulleted-list"><li style="list-style-type:circle">This will print the keys of the dictionary</li></ul><h1 id="e1fe425b-bb09-4db4-b7cf-8cea5f276fe3" class="">Assignments</h1><ul id="40aa2b24-0d47-4ff9-b34f-ab26954d64aa" class="bulleted-list"><li style="list-style-type:circle">Grading Program: <p id="6c944da9-cba8-457d-9343-5c8f6c195bcb" class="">You have access to a database of <code>student_scores</code> in the format of a dictionary. The <strong>keys</strong> in <code>student_scores</code> are the <strong>names</strong> of the students and the <strong>values</strong> are their exam <strong>scores</strong>. Write a program that <strong>converts their scores to grades</strong>. By the end of your program, you should have a new dictionary called <code>student_grades</code> that should contain student <strong>names</strong> for <strong>keys</strong> and their <strong>grades</strong> for <strong>values</strong>. T<strong>he final version</strong> of the <code>student_grades</code> dictionary will be checked.</p><pre id="78eb9346-ac06-4ec2-a39a-cd8611f3cd31" class="code"><code>student_scores = {
-  &quot;Harry&quot;: 81,
-  &quot;Ron&quot;: 78,
-  &quot;Hermione&quot;: 99, 
-  &quot;Draco&quot;: 74,
-  &quot;Neville&quot;: 62,
-}
-
-
-for student in student_scores:
-    if student_scores[student]&gt;=91:
-        student_scores[student] = &quot;Outstanding&quot;
-    elif student_scores[student]&gt;=81:
-        student_scores[student] = &quot;Exceeds Expectations&quot;
-    elif student_scores[student]&gt;=71:
-        student_scores[student] = &quot;Acceptable&quot;
-    else:
-        student_scores[student] = &quot;Fail&quot;
-
-print(student_scores)</code></pre></li></ul><ul id="2dea0375-19c3-44d1-8abc-976651c762b6" class="bulleted-list"><li style="list-style-type:circle">Dictionaries in list: <p id="a73d5a24-8e42-4893-9b6b-2f9024366b4d" class="">You are going to write a program that adds to a <code>travel_log</code>. You can see a travel_log which is a <strong>List</strong> that contains 2 <strong>Dictionaries</strong>.</p><p id="1c1f9306-b8a8-4d67-a93f-29c9dbaaf38e" class="">Write a function that will work with the following line of code on line 21 to add the entry for Russia to the <code>travel_log</code>.</p><pre id="84a5aa87-31aa-40e0-ab1d-f7e480e5dd44" class="code"><code>travel_log = [
-{
-  &quot;country&quot;: &quot;France&quot;,
-  &quot;visits&quot;: 12,
-  &quot;cities&quot;: [&quot;Paris&quot;, &quot;Lille&quot;, &quot;Dijon&quot;]
-},
-{
-  &quot;country&quot;: &quot;Germany&quot;,
-  &quot;visits&quot;: 5,
-  &quot;cities&quot;: [&quot;Berlin&quot;, &quot;Hamburg&quot;, &quot;Stuttgart&quot;]
-},
-]
-
-
-def add_new_country(country,visits,places):
-    new_dict = {}
-    new_dict[&quot;country&quot;] = country
-    new_dict[&quot;visits&quot;] = visits
-    new_dict[&quot;cities&quot;] = places
-    travel_log.append(new_dict)
-    return travel_log
-
-
-add_new_country(&quot;Russia&quot;, 2, [&quot;Moscow&quot;, &quot;Saint Petersburg&quot;])
-print(travel_log)</code></pre></li></ul></li></ul></div></article></body></html>
+</style></head><body><article id="6fd9bfc6-ca89-4c03-a6e7-056bff149c58" class="page serif"><header><h1 class="page-title">Asynchronous programming (Multithreading) (1)</h1></header><div class="page-body"><ul id="02c7cc15-9569-4dcb-a47e-bd8d29b11829" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">A method which is used to do multiple task simulatenously in less time</span><div class="indented"></div></li></ul><ul id="6f2d6113-a2ec-4309-8d43-2d0c43c8601e" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Parallel programming is a type of asynchronous programming</span><div class="indented"></div></li></ul><ul id="b685090f-e263-4d69-bab3-85d08bbc85d0" class="to-do-list"><li><div class="checkbox checkbox-off"></div> <span class="to-do-children-unchecked">Can be used when downloading several images over a network (refer 1)</span><div class="indented"></div></li></ul><p id="5872180e-a630-4f1f-a098-a17dbdb99e26" class="">
+</p><h3 id="dfc07f24-6b65-48b8-9c48-5803582e8fc2" class="">Refer</h3><ul id="d261a68b-8256-48f6-ba42-56dc5235bbd5" class="bulleted-list"><li style="list-style-type:disc"><a href="https://towardsdatascience.com/introduction-to-concurrency-in-python-a3ad6aa8b2d1">Introduction to Concurrency in Python | by David Farrugia | Towards Data Science</a></li></ul><ul id="6b6d4d78-390c-47d7-b147-31b965db6ed8" class="bulleted-list"><li style="list-style-type:disc"><a href="https://towardsdatascience.com/introduction-to-asynchronous-programming-in-python-3cd190748cd5">Introduction to Asynchronous Programming in Python | by David Farrugia | Towards Data Science</a></li></ul></div></article></body></html>

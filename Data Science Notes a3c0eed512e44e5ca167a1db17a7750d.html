@@ -1,4 +1,4 @@
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Scope </title><style>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Data Science Notes</title><style>
 /* cspell:disable-file */
 /* webkit printing magic: print all background colors */
 html {
@@ -666,59 +666,4 @@ blockquote {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
-</style></head><body><article id="7c3423c4-d002-49ad-b62c-d92c7dfa919b" class="page serif"><header><h1 class="page-title">Scope </h1></header><div class="page-body"><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="86651bce-fc76-466e-acd1-3cdbdc2c2942"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Scope of a variable is used to check the accessability of that variable in a program. Is indicates, from where in a particular program the variable can be accessed.</div></figure><ul id="74d02424-99fc-40d7-8220-adb130338db9" class="bulleted-list"><li style="list-style-type:disc">Example<pre id="48baac11-6018-4d51-aeff-b708c51058d4" class="code"><code>enemies = 1
-def increase_enemies():
-	enemies = 2
-	print(f&quot;Enemies inside the function is {enemies}&quot;)
-
-increase_enemies()
-print(f&quot;Enemies outside the function is {enemies}&quot;)
-
-Output
-------
-2 #Because this is printing the variable inside the function. And inside the function,
-	 #variable is updated, so its value becomes 2
-1 #Because the value of enemies outside the function is 1</code></pre><h2 id="2eb66c69-3df1-4cf4-8788-f07dc77d04df" class="">Local variable and Global variable</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="a5de0b5f-a2d8-4780-9b1b-8a04acdb692a"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Variables in a program can be divided into two based on their scopes - Local variable and Global variable</div></figure><ul id="e690c844-49c7-426b-a1ba-e11bc24c4a85" class="bulleted-list"><li style="list-style-type:circle"><strong>Local variable</strong> -<ul id="7ee8d968-4c1c-440f-a01b-65436200a8fa" class="bulleted-list"><li style="list-style-type:square">a variable that is defined inside the function, that is local to that function</li></ul><ul id="74d4f725-a156-4452-854a-9e9d9324fb8d" class="bulleted-list"><li style="list-style-type:square">We cannot access a local variable from outside the function, because the scope of that variable is within that function alone</li></ul><ul id="dfcec534-4543-4efb-ab3b-1f46af1fda0c" class="bulleted-list"><li style="list-style-type:square">If we need to access the variable outside the function, we need a global variable</li></ul></li></ul><ul id="1e3f29ec-8c6a-4b4d-820a-b81c9a49ade1" class="bulleted-list"><li style="list-style-type:circle"><strong>Global variable</strong><ul id="325f860b-3bed-440e-a919-6abc1d115724" class="bulleted-list"><li style="list-style-type:square">A global variable can be accessed from anywhere within the program, within and outside a function </li></ul></li></ul><ul id="0bd56b80-6bf5-4b77-a682-1994bc8377f3" class="bulleted-list"><li style="list-style-type:circle">The concept of local and global is applicable to variables, functions, objects, etc. </li></ul></li></ul><h2 id="9ea45da6-33e9-47dd-a699-1e983f8c8819" class="">Block scope</h2><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9e116b42-3d22-4ec5-a34c-73a8a125e942"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Block means the part of code which is contained between loops or if statements. Block scope of a variable indicates the scope of variable within the block. </div></figure><ul id="2f38ce7b-7731-4d6a-abd1-fe9c6d4f230c" class="bulleted-list"><li style="list-style-type:disc">Python does not have a <strong>block scope.</strong><pre id="50fa794a-6206-47ae-bef7-76a78da20d37" class="code"><code>if a&gt;3:
-	small_number = 3
-else:
-	small_number = a
-print(small_number) 
-
-&#x27;&#x27;&#x27;
-In this case, even though the variable small_number is defined inside if, and is 
-intended, the variable is not local and is available from anywhere within the program
-&#x27;&#x27;&#x27;</code></pre></li></ul><ul id="ee615258-724f-42f9-b319-87d247ee9336" class="bulleted-list"><li style="list-style-type:disc">Modify a global variable locally<ul id="5d49e0f2-c741-4a4d-bd03-fca24b42ee6d" class="bulleted-list"><li style="list-style-type:circle">We cannot directly modify or use a global variable inside a function<figure id="4ef55609-8b20-4ad4-b71f-081226e55375" class="image"><a href="Scope%207c3423c4d00249adb62cd92c7dfa919b/Untitled.png"><img style="width:636px" src="Scope%207c3423c4d00249adb62cd92c7dfa919b/Untitled.png"/></a></figure></li></ul><ul id="9709e953-7253-4920-b3b4-3795a6837ab0" class="bulleted-list"><li style="list-style-type:circle">This throws an error. Even though we have defined the variable outside the function, if we need to use it or modify it locally, we need to explicitly give that variable or mention the already defined one as a global variable. Line number 3<figure id="da53473c-d912-498b-b789-3f2998d56847" class="image"><a href="Scope%207c3423c4d00249adb62cd92c7dfa919b/Untitled%201.png"><img style="width:443px" src="Scope%207c3423c4d00249adb62cd92c7dfa919b/Untitled%201.png"/></a></figure></li></ul></li></ul><ul id="7136c0ce-3236-47f1-9852-0ae55404cf84" class="bulleted-list"><li style="list-style-type:disc">Why can&#x27;t we modify a global variable directly?<ul id="e6ba251d-d01f-49dc-9b16-fa890f785f99" class="bulleted-list"><li style="list-style-type:circle">This is used to prevent unnecessary bugs and failures caused if we could easily change any global variable</li></ul><ul id="d7ce9b54-af82-4dcf-b679-968adb644635" class="bulleted-list"><li style="list-style-type:circle"><strong>We can use it directly, but we can&#x27;t modify it </strong></li></ul></li></ul><ul id="0f2343a6-499c-4526-adc4-bfb340b1151b" class="bulleted-list"><li style="list-style-type:disc">Another way to modify the global variable is by making use of a return statement. </li></ul><ul id="2115b6da-e302-4053-9d89-60d5b2f3fa63" class="bulleted-list"><li style="list-style-type:disc">Global variables are widely used when we need to define constants, which we never change in the programming<ul id="5646912d-c7b3-4c49-be67-1e7caec91ba9" class="bulleted-list"><li style="list-style-type:circle">For example, if we need to define max_len or batch_size, we can define it as global and can use it whenever we need. But we cannot modify that global variable directly. We can change its value by assignment, inside any function. </li></ul><ul id="f2f7703a-20fb-4ef9-b4db-20ab5ff2a7d6" class="bulleted-list"><li style="list-style-type:circle">A good practice to define constants is to use upper case<ul id="e6cdc2a5-65d8-4416-b755-eb523f3f438b" class="bulleted-list"><li style="list-style-type:square">BATCH_SIZE = 8</li></ul><ul id="3025f025-1b4a-4e20-8964-66a08b14e78c" class="bulleted-list"><li style="list-style-type:square">MAX_LEN = 128 </li></ul></li></ul></li></ul><h1 id="b40c82c5-ecb9-41da-b5e0-fa0be368c61b" class="">Assignment</h1><ul id="057a2a19-f9bd-421d-823d-eb4f1362f93f" class="bulleted-list"><li style="list-style-type:disc">The number-guessing game<p id="e43b038e-88d2-4572-b248-db73195dea49" class="">Guess the random number selected by the computer correctly within the given number of chances</p><pre id="88ee778d-2003-4e6f-a235-7c31a32563a8" class="code"><code>import random
-
-EASY_LEVEL_TURNS = 10
-HARD_LEVEL_TURNS = 5
-
-def set_difficulty():
-  difficulty_level = input(&quot;Choose a difficulty level. Easy or Hard &quot;).lower()
-  if difficulty_level == &quot;easy&quot;:
-    number_of_attempts = EASY_LEVEL_TURNS
-  else:
-    number_of_attempts =  HARD_LEVEL_TURNS
-  return number_of_attempts
-  
-def compare(user_input,answer):
-  if user_input&lt;answer:
-    print(&quot;Too low&quot;)
-    return False
-  elif user_input&gt;answer:
-    print(&quot;Too high&quot;)
-    return False
-  else:
-    print(&quot;You win!&quot;) 
-    return True
-    
-answer = random.randint(1,101) 
-print(answer) 
-number_of_attempts = set_difficulty() 
-end = False
-while number_of_attempts&gt;0 and end == False:
-  user_guess = int(input(&quot;Make a guess: &quot;)) 
-  end = compare(user_guess,answer)
-  number_of_attempts -= 1
-  if number_of_attempts==0 and end == False:
-    print(&quot;You lose!&quot;)</code></pre></li></ul><p id="aa1b9362-ce08-47f5-b214-09ecd45d474f" class="">
-</p></div></article></body></html>
+</style></head><body><article id="a3c0eed5-12e4-4e5c-a167-a1db17a7750d" class="page serif"><header><h1 class="page-title">Data Science Notes</h1></header><div class="page-body"></div></article></body></html>
